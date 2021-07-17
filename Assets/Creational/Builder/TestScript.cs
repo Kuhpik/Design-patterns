@@ -1,7 +1,7 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
 
-namespace Kuhpik.DesignPatterns.Builder
+namespace Kuhpik.DesignPatterns.Creational.Builder
 {
     public class TestScript : MonoBehaviour
     {

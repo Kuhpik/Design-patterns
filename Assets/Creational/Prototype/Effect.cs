@@ -1,4 +1,4 @@
-﻿namespace Kuhpik.DesignPatterns.Prototype
+﻿namespace Kuhpik.DesignPatterns.Creational.Prototype
 {
     public sealed class Effect : IPrototypable<Effect>
     {

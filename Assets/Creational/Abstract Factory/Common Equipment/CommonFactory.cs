@@ -1,4 +1,4 @@
-﻿namespace Kuhpik.DesignPatterns.AbstractFactory
+﻿namespace Kuhpik.DesignPatterns.Creational.AbstractFactory
 {
     public class CommonFactory : EquipmentFactory
     {

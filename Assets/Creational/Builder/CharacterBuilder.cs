@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using UnityEngine;
 
-namespace Kuhpik.DesignPatterns.Builder
+namespace Kuhpik.DesignPatterns.Creational.Builder
 {
     public class CharacterBuilder
     {

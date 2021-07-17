@@ -1,4 +1,4 @@
-﻿namespace Kuhpik.DesignPatterns.Prototype
+﻿namespace Kuhpik.DesignPatterns.Creational.Prototype
 {
     public class Character : IPrototypable<Character>
     {

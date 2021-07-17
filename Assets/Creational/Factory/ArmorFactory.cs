@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Kuhpik.DesignPatterns.Factory
+namespace Kuhpik.DesignPatterns.Creational.Factory
 {
     public class ArmorFactory : MonoBehaviour, IFactory<Equipment>
     {

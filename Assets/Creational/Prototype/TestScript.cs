@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Kuhpik.DesignPatterns.Prototype
+namespace Kuhpik.DesignPatterns.Creational.Prototype
 {
     public class TestScript : MonoBehaviour
     {

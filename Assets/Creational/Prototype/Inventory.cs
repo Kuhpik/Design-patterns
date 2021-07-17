@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Kuhpik.DesignPatterns.Prototype
+namespace Kuhpik.DesignPatterns.Creational.Prototype
 {
     public class Inventory : IPrototypable<Inventory>
     {

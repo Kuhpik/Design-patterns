@@ -1,4 +1,4 @@
-﻿namespace Kuhpik.DesignPatterns.Factory
+﻿namespace Kuhpik.DesignPatterns.Creational.Factory
 {
     public interface IFactory<T> where T : class
     {

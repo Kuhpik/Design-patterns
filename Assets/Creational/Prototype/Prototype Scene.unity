@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _info: Plase use breakpoints for testing this
+  _reason: Im 2 lazy for writing debug output. Seems too big
 --- !u!4 &512824072
 Transform:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Patterns.Factory
+namespace Kuhpik.DesignPatterns.Factory
 {
     // Personaly i prefer enums over of strings.
     // Also this could be some workarround with static string value with dropdown inspector

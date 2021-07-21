@@ -34,10 +34,8 @@ namespace Kuhpik.DesignPatterns.Behavioral.Iterator
             }
         }
 
-        void DisplayCustomerInfo(object @object)
+        void DisplayCustomerInfo(CustomerData customer)
         {
-            var customer = @object as CustomerData;
-
             Debug.Log(string.Format
             (
                 "{0}. {1} y.o. Order with price of {2}",

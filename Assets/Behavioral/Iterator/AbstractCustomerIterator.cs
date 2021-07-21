@@ -4,20 +4,14 @@ using System.Linq;
 
 namespace Kuhpik.DesignPatterns.Behavioral.Iterator
 {
-    public abstract class AbstractCustomerIterator : IEnumerable, IEnumerator
+    public abstract class AbstractCustomerIterator : IEnumerable<CustomerData>
     {
         protected List<CustomerData> _customers;
-        protected int _currentPosition = _defaultPosition;
-
-        const int _defaultPosition = -1;
 
         public AbstractCustomerIterator(IList<CustomerData> customers)
         {
             _customers = customers.ToList();
         }
-
-        object IEnumerator.Current => Current();
-        public IEnumerator GetEnumerator() => this;
 
         public virtual void Add(CustomerData customer)
         {
@@ -32,20 +26,17 @@ namespace Kuhpik.DesignPatterns.Behavioral.Iterator
             }
         }
 
-        public virtual object Current()
+        public IEnumerator<CustomerData> GetEnumerator()
         {
-            return _customers[_currentPosition];
+            for (int i = 0; i < _customers.Count; i++)
+            {
+                yield return _customers[i];
+            }
         }
 
-        public virtual bool MoveNext()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            _currentPosition++;
-            return _currentPosition < _customers.Count();
-        }
-
-        public void Reset()
-        {
-            _currentPosition = _defaultPosition;
+            return GetEnumerator();
         }
     }
 }

@@ -8,8 +8,10 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
 {
     public class TestScript : MonoBehaviour
     {
+#pragma warning disable IDE0040, CS0414
         [Header("Info")]
         [SerializeField] [Multiline] [ReadOnly] string _info = "Test while in Play mode.\nUse memory profiler.";
+#pragma warning restore IDE0040, CS0414
 
         [Header("Settings")]
         [SerializeField] int _testCount = 100000;

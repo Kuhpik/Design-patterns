@@ -7,7 +7,9 @@ namespace Kuhpik.DesignPatterns.Behavioral.Command
 {
     public class TestScript : MonoBehaviour
     {
+#pragma warning disable IDE0040, CS0414
         [SerializeField] [Multiline] [ReadOnly] string _info = "Press Play button\nWatch Hierarchy window";
+#pragma warning restore IDE0040, CS0414
 
         [Header("Settings")]
         [SerializeField] [ReadOnly] float _delayBetweenActions = 0.5f;
@@ -24,8 +26,8 @@ namespace Kuhpik.DesignPatterns.Behavioral.Command
             var testGO = new GameObject("Test");
 
             _commands.Add(new ChangeHierarchyCommand(testGO, 0));
-            _commands.Add(new RenameCommand(testGO,"Look here"));
-            _commands.Add(new RenameCommand(testGO,"Other name"));
+            _commands.Add(new RenameCommand(testGO, "Look here"));
+            _commands.Add(new RenameCommand(testGO, "Other name"));
             _commands.Add(new ChangeHierarchyCommand(testGO, 1));
             _commands.Add(new RenameCommand(testGO, "Done"));
 

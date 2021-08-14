@@ -16,5 +16,13 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
             Color = color;
             WheelColor = wheelColor;
         }
+
+        public FlyweightData(Sprite sprite, string modelName, ref Color color, ref Color wheelColor)
+        {
+            Sprite = sprite;
+            ModelName = modelName;
+            Color = color;
+            WheelColor = wheelColor;
+        }
     }
 }

@@ -23,6 +23,8 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
         [SerializeField] string[] _possibleNames;
 
         FlyweightFactory _flyweightFactory;
+        FlyweightMemoizerFactory _flyweightMemoizerFactory;
+        FlyweightRefFactory _flyweightRefFactory;
 
         //100K Transforms allocates 58 mb
         //100K MonoBehaviours allocates 42 mb
@@ -30,7 +32,9 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
         [Button]
         void DefaultCreation() 
         {
-            //Unity allocates 400 mb
+            //Unity allocates 350 mb.
+            //Garbage is arround ~50 mb (400 in total)
+            //Have to wait some time before GC removes it.
             StartCoroutine(CreationRoutine(CreateDefaultCar));
         }
 
@@ -38,10 +42,30 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
         void FlyweightCreation()
         {
             //Unity allocates 350 mb.
-            //But string hashes generating ~400 mb of garbage.
+            //But string hashes generating ~400 mb of garbage (750 in total).
             //Have to wait some time before GC removes it.
             _flyweightFactory = new FlyweightFactory();
             StartCoroutine(CreationRoutine(CreateFlyweightCar));
+        }
+
+        [Button]
+        void FlyweightWithMemoizerCreation()
+        {
+            //Unity allocates 350 mb.
+            //Garbage is arround ~150 mb (500 in total)
+            //Have to wait some time before GC removes it.
+            _flyweightMemoizerFactory = new FlyweightMemoizerFactory();
+            StartCoroutine(CreationRoutine(CreateFlyweightMemoizerCar));
+        }
+
+        [Button]
+        void FlyweightRefCreation()
+        {
+            //Unity allocates 350 mb.
+            //Garbage is arround ~100 mb (450 in total)
+            //Have to wait some time before GC removes it.
+            _flyweightRefFactory = new FlyweightRefFactory();
+            StartCoroutine(CreationRoutine(CreateFlyweightRefCar));
         }
 
         void CreateDefaultCar()
@@ -60,6 +84,28 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
             var flyweight = _flyweightFactory.GetFlyweightData(
                 GetRandomName(), GetRandomSprite(),
                 GetRandomColor(), GetRandomColor());
+
+            car.FlyweightData = flyweight;
+        }
+
+        void CreateFlyweightMemoizerCar()
+        {
+            var car = new GameObject("Flyweight Car").AddComponent<FlyweightCar>();
+            var flyweight = _flyweightMemoizerFactory.GetFlyweightData(
+                GetRandomName(), GetRandomSprite(),
+                GetRandomColor(), GetRandomColor());
+
+            car.FlyweightData = flyweight;
+        }
+
+        void CreateFlyweightRefCar()
+        {
+            var car = new GameObject("Flyweight Car").AddComponent<FlyweightCar>();
+            var name = _possibleNames[Random.Range(0, _possibleNames.Length)];
+            var sprite = _possibleSprites[Random.Range(0, _possibleSprites.Length)];
+            ref var carColor = ref _possibleColors[Random.Range(0, _possibleColors.Length)];
+            ref var wheelColor = ref _possibleColors[Random.Range(0, _possibleColors.Length)];
+            var flyweight = _flyweightRefFactory.GetFlyweightData(name, sprite, ref carColor, ref wheelColor);
 
             car.FlyweightData = flyweight;
         }

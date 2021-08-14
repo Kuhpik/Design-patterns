@@ -32,8 +32,8 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
         [Button]
         void DefaultCreation() 
         {
-            //Unity allocates 350 mb.
-            //Garbage is arround ~50 mb (400 in total)
+            //Unity allocated 380 mb. Heap is 43 mb.
+            //Garbage is arround ~30 mb (~410 in total)
             //Have to wait some time before GC removes it.
             StartCoroutine(CreationRoutine(CreateDefaultCar));
         }
@@ -41,8 +41,8 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
         [Button]
         void FlyweightCreation()
         {
-            //Unity allocates 350 mb.
-            //But string hashes generating ~400 mb of garbage (750 in total).
+            //Unity allocated 380 mb. Heap is 43 mb.
+            //But string hashes generating ~400 mb of garbage (~750 in total).
             //Have to wait some time before GC removes it.
             _flyweightFactory = new FlyweightFactory();
             StartCoroutine(CreationRoutine(CreateFlyweightCar));
@@ -51,8 +51,8 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
         [Button]
         void FlyweightWithMemoizerCreation()
         {
-            //Unity allocates 350 mb.
-            //Garbage is arround ~150 mb (500 in total)
+            //Unity allocated 380 mb. Heap is 43 mb.
+            //Garbage is arround ~150 mb (~500 in total)
             //Have to wait some time before GC removes it.
             _flyweightMemoizerFactory = new FlyweightMemoizerFactory();
             StartCoroutine(CreationRoutine(CreateFlyweightMemoizerCar));
@@ -61,8 +61,8 @@ namespace Kuhpik.DesignPatterns.Structural.Flyweight
         [Button]
         void FlyweightRefCreation()
         {
-            //Unity allocates 350 mb.
-            //Garbage is arround ~100 mb (450 in total)
+            //Unity allocated 380 mb. Heap is 43 mb.
+            //Garbage is arround ~100 mb (~450 in total)
             //Have to wait some time before GC removes it.
             _flyweightRefFactory = new FlyweightRefFactory();
             StartCoroutine(CreationRoutine(CreateFlyweightRefCar));

@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Kuhpik.DesignPatterns.UnityRelated.DoubleBuffer
+namespace Kuhpik.DesignPatterns.Others.DoubleBuffer
 {
     //Maybe not the best example
     //Cave generator has cleaner reason to use double buffer

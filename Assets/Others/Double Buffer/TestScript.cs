@@ -1,7 +1,7 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
 
-namespace Kuhpik.DesignPatterns.UnityRelated.DoubleBuffer
+namespace Kuhpik.DesignPatterns.Others.DoubleBuffer
 {
     public class TestScript : MonoBehaviour
     {

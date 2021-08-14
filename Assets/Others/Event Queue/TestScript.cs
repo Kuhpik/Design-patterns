@@ -1,7 +1,7 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
 
-namespace Kuhpik.DesignPatterns.UnityRelated.EventQueue
+namespace Kuhpik.DesignPatterns.Others.EventQueue
 {
     public class TestScript : MonoBehaviour
     {
